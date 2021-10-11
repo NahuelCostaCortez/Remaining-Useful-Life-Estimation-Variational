@@ -77,9 +77,9 @@ def create_model(timesteps, input_dim, intermediate_dim, batch_size, latent_dim,
 	'''
 	
 	# -------------------- Wrapper model --------------------
-	class RVAE(keras.Model):
+	class RVE(keras.Model):
 		def __init__(self, encoder, regressor, decoder=None, **kwargs):
-			super(RVAE, self).__init__(**kwargs)
+			super(RVE, self).__init__(**kwargs)
 			self.encoder = encoder
 			self.regressor = regressor
 			self.total_loss_tracker = keras.metrics.Mean(name="total_loss")
@@ -169,7 +169,7 @@ def create_model(timesteps, input_dim, intermediate_dim, batch_size, latent_dim,
 			}
 	# -------------------------------------------------------
 
-	vae = RVAE(encoder, regressor)
-	vae.compile(optimizer=optimizer)
+	rve = RVE(encoder, regressor)
+	rve.compile(optimizer=optimizer)
 
-	return vae
+	return rve
