@@ -29,7 +29,7 @@ if __name__ == "__main__":
 	epochs = 10000
 	optimizer = 'adam'
 	
-	RVAE = model.create_model(timesteps, 
+	RVE = model.create_model(timesteps, 
 			input_dim, 
 			intermediate_dim, 
 			batch_size, 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
 	# -----------------------------------------------------------------------
 
 	# --------------------------- TRAINING ---------------------------------
-	results = RVAE.fit(x_train, y_train,
+	results = RVE.fit(x_train, y_train,
 			shuffle=True,
 			epochs=epochs,
 			batch_size=batch_size,
@@ -53,11 +53,11 @@ if __name__ == "__main__":
 
 	# -------------------------- EVALUATION ---------------------------------
 	RVAE.load_weights('./checkpoints/checkpoint')
-	train_mu = utils.viz_latent_space(RVAE.encoder, np.concatenate((x_train, x_val)), np.concatenate((y_train, y_val)))
-	test_mu = utils.viz_latent_space(RVAE.encoder, x_test, y_test.clip(upper=threshold))
+	train_mu = utils.viz_latent_space(RVE.encoder, np.concatenate((x_train, x_val)), np.concatenate((y_train, y_val)))
+	test_mu = utils.viz_latent_space(RVE.encoder, x_test, y_test.clip(upper=threshold))
 	# Evaluate
-	y_hat_train = RVAE.regressor.predict(train_mu)
-	y_hat_test = RVAE.regressor.predict(test_mu)
+	y_hat_train = RVE.regressor.predict(train_mu)
+	y_hat_test = RVE.regressor.predict(test_mu)
 
 	utils.evaluate(np.concatenate((y_train, y_val)), y_hat_train, 'train')
 	utils.evaluate(y_test, y_hat_test, 'test')
