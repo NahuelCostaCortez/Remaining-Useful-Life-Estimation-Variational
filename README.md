@@ -16,4 +16,6 @@ You can find a Gradio demo of the model in https://huggingface.co/spaces/NahuelC
 - model.py: model architecture definition.
 - utils.py: some helper functions.
 - requirements.txt: requirements for the project.
-- Dockerfile: in case you want to reproduce the same environemnt in which this project was done, here are the instructions to build the Docker image.
+- Dockerfile: instructions to build a Docker image with all the necessary dependencies.
+
+To execute the python code we recommend setting up a new python environment with packages matching the requirements.txt file. It can be easily done with anaconda: conda create --name --file requirements.txt. Another alternative is to run exactly the same environment under which this project was made with Docker. A Dockerfile is provided, which contains the set of instructions for creating a container with all the necessary packages and dependencies. The fastest way to set it up is to clone the reposity, open Visual Studio Code, and from the command palette select "Remote-containers: Open folder in Container".
