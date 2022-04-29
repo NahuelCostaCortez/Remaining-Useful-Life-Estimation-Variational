@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.3.0rc1-gpu-jupyter
+FROM python:3.7
 
 RUN apt-get update && apt-get install -y git
 RUN mkdir /init

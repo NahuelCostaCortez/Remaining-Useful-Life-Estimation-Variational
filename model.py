@@ -1,8 +1,7 @@
 import random
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras.layers import Input, Dense, Lambda, LSTM, RepeatVector, Bidirectional, Masking
-from keras.callbacks import EarlyStopping, ModelCheckpoint, LambdaCallback
+from tensorflow.keras.layers import Input, Dense, LSTM, Bidirectional, Masking
 
 # keeping the random seed constant from one experiment to the next makes it 
 # easier to interpret the effects of hyper-parameters values 

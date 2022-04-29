@@ -1,6 +1,5 @@
 import model
 import utils
-import random
 import numpy as np
 
 
@@ -39,7 +38,7 @@ if __name__ == "__main__":
 			)
 	
 	# Callbacks for training
-	model_callbacks = utils.get_callbacks(RVAE, x_train, y_train)
+	model_callbacks = utils.get_callbacks(RVE, x_train, y_train)
 	# -----------------------------------------------------------------------
 
 	# --------------------------- TRAINING ---------------------------------
@@ -52,7 +51,7 @@ if __name__ == "__main__":
 	# -----------------------------------------------------------------------
 
 	# -------------------------- EVALUATION ---------------------------------
-	RVAE.load_weights('./checkpoints/checkpoint')
+	RVE.load_weights('./checkpoints/checkpoint')
 	train_mu = utils.viz_latent_space(RVE.encoder, np.concatenate((x_train, x_val)), np.concatenate((y_train, y_val)))
 	test_mu = utils.viz_latent_space(RVE.encoder, x_test, y_test.clip(upper=threshold))
 	# Evaluate
