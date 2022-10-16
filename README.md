@@ -6,6 +6,8 @@ The paper is published in Reliability Engineering and System Safety and is publi
 
 You can find a Gradio demo of the model in https://huggingface.co/spaces/NahuelCosta/RUL-Variational
 
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/NahuelCostaCortez/Remaining-Useful-Life-Estimation-Variational/blob/main/RULRVE.ipynb)
+
 # Files in this Repository
 - \data: samples with which to train the model.
 - \images: folder to save images of the model latent space during training.
