@@ -18,7 +18,7 @@ def create_model(timesteps, input_dim, intermediate_dim, batch_size, latent_dim,
 	latent_dim = latent_dim
 	epochs = epochs
 	if optimizer == 'adam':
-		optimizer = keras.optimizers.Adam(learning_rate=0.0001)
+		optimizer = keras.optimizers.Adam(learning_rate=0.001)
 	else:
 		print("unimplemented optimizer")
 		exit(-1)
