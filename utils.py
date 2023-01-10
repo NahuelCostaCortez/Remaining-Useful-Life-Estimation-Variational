@@ -375,9 +375,9 @@ def score(y_true, y_hat):
   for true, hat in zip(y_true, y_hat):
     subs = hat - true
     if subs < 0:
-      res = res + np.exp(-subs/13)[0]-1
+      res = res + np.exp(-subs/10)[0]-1
     else:
-      res = res + np.exp(subs/10)[0]-1
+      res = res + np.exp(subs/13)[0]-1
   print("score: ", res)
 
 def results(path, x_train, y_train, x_test, y_test):
