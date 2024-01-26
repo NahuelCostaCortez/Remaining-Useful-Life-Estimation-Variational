@@ -8,7 +8,7 @@ You can find a Gradio demo of the model in https://huggingface.co/spaces/NahuelC
 
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NahuelCostaCortez/Remaining-Useful-Life-Estimation-Variational/blob/main/RULRVE.ipynb)
 
-🚨 The code of this repository will no longer be mantained here. You can check check [rapidae](https://github.com/NahuelCostaCortez/rapidae) where this model, along with other autoencoder models is up-to-date.
+🚨 The code of this repository will no longer be mantained here. You can check [rapidae](https://github.com/NahuelCostaCortez/rapidae) where this model, along with other autoencoder models is up-to-date.
 
 # Files in this Repository
 - \data: samples with which to train the model.
